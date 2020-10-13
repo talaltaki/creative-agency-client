@@ -61,7 +61,7 @@ const Login = () => {
           className="logo mx-auto d-block mt-5 img-fluid"
           style={{ height: "60px" }}
           src={"https://i.ibb.co/BCbDc1K/logo.png"}
-          href="/home"
+          href="/"
           alt="logo"
         />
       </a>
