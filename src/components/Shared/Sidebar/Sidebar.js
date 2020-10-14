@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,8 +9,22 @@ import {
   faPlus,
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import { UserContext } from "../../../App";
 
 const Sidebar = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/admin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: loggedInUser.email }),
+    })
+      .then((response) => response.json())
+      .then((data) => setIsAdmin(data));
+  }, []);
+
   return (
     <div>
       <a href="/">
@@ -27,42 +41,57 @@ const Sidebar = () => {
         style={{ height: "100vh" }}
       >
         <ul className="list-unstyled">
-          <li>
-            <Link to="/order" className="text-dark text-decoration-none">
-              <FontAwesomeIcon icon={faShoppingCart} /> <span>Order</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/service-list-user"
-              className="text-dark text-decoration-none"
-            >
-              <FontAwesomeIcon icon={faShoppingBag} /> <span>Service List</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/review" className="text-dark text-decoration-none">
-              <FontAwesomeIcon icon={faCommentDots} /> <span>Review</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/service-list-admin"
-              className="text-dark text-decoration-none"
-            >
-              <FontAwesomeIcon icon={faShoppingBag} /> <span>Service List</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/add-service" className="text-dark text-decoration-none">
-              <FontAwesomeIcon icon={faPlus} /> <span>Add Service</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/make-admin" className="text-dark text-decoration-none">
-              <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
-            </Link>
-          </li>
+          {!isAdmin ? (
+            <div>
+              <li>
+                <Link to="/" className="text-dark text-decoration-none">
+                  <FontAwesomeIcon icon={faShoppingCart} /> <span>Order</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/service-list"
+                  className="text-dark text-decoration-none"
+                >
+                  <FontAwesomeIcon icon={faShoppingBag} />{" "}
+                  <span>Service List</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/review" className="text-dark text-decoration-none">
+                  <FontAwesomeIcon icon={faCommentDots} /> <span>Review</span>
+                </Link>
+              </li>
+            </div>
+          ) : (
+            <div>
+              <li>
+                <Link
+                  to="/service-list"
+                  className="text-dark text-decoration-none"
+                >
+                  <FontAwesomeIcon icon={faShoppingBag} />{" "}
+                  <span>Service List</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/add-service"
+                  className="text-dark text-decoration-none"
+                >
+                  <FontAwesomeIcon icon={faPlus} /> <span>Add Service</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/make-admin"
+                  className="text-dark text-decoration-none"
+                >
+                  <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
+                </Link>
+              </li>
+            </div>
+          )}
         </ul>
       </div>
     </div>

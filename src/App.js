@@ -1,15 +1,15 @@
 import React, { createContext, useState } from "react";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login";
-import Order from "./components/Dashboard/Order/Order";
+import Order from "./components/UserDashboard/Order/Order";
 import PrivateRoute from "./components/Login/PrivateRoute";
-import UserServices from "./components/Dashboard/UserServices/UserServices";
-import Review from "./components/Dashboard/Review/Review";
-import AdminServices from "./components/AdminDashboard/AdminServices/AdminServices";
+import Review from "./components/UserDashboard/Review/Review";
 import AddService from "./components/AdminDashboard/AddService/AddService";
 import MakeAdmin from "./components/AdminDashboard/MakeAdmin/MakeAdmin";
+import ServicesList from "./components/Dashboard/ServicesList/ServicesList";
 
 export const UserContext = createContext();
 
@@ -28,16 +28,12 @@ function App() {
             <AddService />
           </Route>
 
-          <Route path="/service-list-admin">
-            <AdminServices />
-          </Route>
-
           <Route path="/review">
             <Review />
           </Route>
 
-          <PrivateRoute path="/service-list-user">
-            <UserServices />
+          <PrivateRoute path="/service-list">
+            <ServicesList />
           </PrivateRoute>
 
           <PrivateRoute path="/order/:id">

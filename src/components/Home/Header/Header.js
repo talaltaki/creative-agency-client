@@ -12,6 +12,7 @@ const Header = () => {
           inventore totam nemo voluptatem ut iure molestias, libero repellat
           ratione voluptas.
         </small>
+        <br />
         <button className="btn btn-dark px-5 mt-3">Hire us</button>
       </div>
       <div className="col-md-6 mx-auto">
