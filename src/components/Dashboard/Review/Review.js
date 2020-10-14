@@ -25,10 +25,10 @@ const Review = () => {
 
   return (
     <div className="container-fluid d-flex">
-      <div className="col-md-2">
+      <div className="col-md-3">
         <Sidebar />
       </div>
-      <div className="col-md-10 mt-5">
+      <div className="col-md-9 mt-5">
         <div className="d-flex container-fluid">
           <h3 className="font-weight-bolder">Review</h3>
           <h6 className="font-weight-bolder ml-auto my-auto">
@@ -74,14 +74,14 @@ const Review = () => {
                 <span className="text-danger">This field is required</span>
               )}
             </div>
-            <div className="form-group w-25">
+            {/* <div className="form-group w-25">
               <input
                 type="file"
                 className="form-control form-control-lg border-0 btn btn-success mt-1"
                 name="image"
                 ref={register}
               />
-            </div>
+            </div> */}
             <button type="submit" className="btn btn-dark px-5 mb-5">
               Submit
             </button>

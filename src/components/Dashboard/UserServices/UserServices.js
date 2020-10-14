@@ -1,23 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../App";
 import Sidebar from "../../Shared/Sidebar/Sidebar";
+import UserServiceCards from "../UserServiceCards/UserServiceCards";
 
 const UserServices = () => {
-  document.title = "Services for You";
+  document.title = "Orders you placed";
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [placedOrders, setPlacedOrders] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/orders?email=" + loggedInUser.email)
+      .then((response) => response.json())
+      .then((result) => setPlacedOrders(result));
+  }, []);
 
   return (
     <div className="container-fluid d-flex">
-      <div className="col-md-2">
+      <div className="col-md-3">
         <Sidebar />
       </div>
-      <div className="col-md-10 mt-5">
+      <div className="col-md-9 mt-5">
         <div className="d-flex container-fluid">
           <h3 className="font-weight-bolder">Services</h3>
           <h6 className="font-weight-bolder ml-auto my-auto">
             {loggedInUser.name}
           </h6>
+        </div>
+
+        <div className="container-fluid row bg-light mt-3">
+          {placedOrders.map((placedOrder) => (
+            <UserServiceCards key={placedOrder._id} placedOrder={placedOrder} />
+          ))}
         </div>
       </div>
     </div>

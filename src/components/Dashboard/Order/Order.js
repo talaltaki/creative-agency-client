@@ -1,15 +1,45 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Sidebar from "../../Shared/Sidebar/Sidebar";
 import { UserContext } from "../../../App";
 import { useForm } from "react-hook-form";
+import { useHistory, useParams } from "react-router-dom";
 
 const Order = () => {
   document.title = "Place Your Order";
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const history = useHistory();
+  const [services, setServices] = useState([]);
+  const [service, setService] = useState({});
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch("http://localhost:5000/services")
+      .then((response) => response.json())
+      .then((data) => {
+        setServices(data);
+        const myService = data.find((e) => e._id === id);
+        setService(myService);
+      });
+  }, []);
 
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data, e) => {
+    fetch("http://localhost:5000/place-order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((done) => {
+        if (done) {
+          alert("Your Order has been placed successfully!");
+        }
+        history.replace("/service-list-user");
+      });
+    e.preventDefault();
+  };
 
   return (
     <div className="container-fluid d-flex">
@@ -57,6 +87,7 @@ const Order = () => {
                 className="form-control form-control-lg"
                 placeholder="Project Name"
                 name="project"
+                defaultValue={service.title}
                 ref={register({ required: true })}
               />
               {errors.project && (
@@ -69,6 +100,7 @@ const Order = () => {
                 placeholder="Project Details"
                 rows="4"
                 name="details"
+                defaultValue={service.description}
                 ref={register({ required: true })}
               ></textarea>
               {errors.details && (
@@ -90,9 +122,10 @@ const Order = () => {
               </div>
               <div className="form-group w-25">
                 <input
-                  type="file"
-                  className="form-control form-control-lg border-0 btn btn-success mt-1"
+                  type="text"
+                  className="form-control form-control-lg border-0 btn btn-success mt-1 d-none"
                   name="image"
+                  defaultValue={service.image}
                   ref={register}
                 />
               </div>

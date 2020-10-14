@@ -36,13 +36,13 @@ function App() {
             <Review />
           </Route>
 
-          <Route path="/service-list-user">
+          <PrivateRoute path="/service-list-user">
             <UserServices />
-          </Route>
+          </PrivateRoute>
 
-          <Route path="/order">
+          <PrivateRoute path="/order/:id">
             <Order />
-          </Route>
+          </PrivateRoute>
 
           <Route path="/login">
             <Login />
