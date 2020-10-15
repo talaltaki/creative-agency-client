@@ -24,11 +24,11 @@ const MakeAdmin = () => {
   };
 
   return (
-    <div className="container-fluid d-flex">
-      <div className="col-md-2">
+    <div className="row">
+      <div className="col-md-2 col-sm-4 col-4">
         <Sidebar />
       </div>
-      <div className="col-md-10 mt-5">
+      <div className="col-md-10 col-sm-8 col-8 mt-5">
         <div className="d-flex container-fluid">
           <h3 className="font-weight-bolder">Make Admin</h3>
           <h6 className="font-weight-bolder ml-auto my-auto">

@@ -36,17 +36,17 @@ const Order = () => {
         if (done) {
           alert("Your Order has been placed successfully!");
         }
-        history.replace("/service-list-user");
+        history.replace("/service-list");
       });
     e.preventDefault();
   };
 
   return (
-    <div className="container-fluid d-flex">
-      <div className="col-md-2">
+    <div className="row">
+      <div className="col-md-2 col-sm-4 col-4">
         <Sidebar />
       </div>
-      <div className="col-md-10 mt-5">
+      <div className="col-md-10 col-sm-8 col-8 mt-5">
         <div className="d-flex container-fluid">
           <h3 className="font-weight-bolder">Order</h3>
           <h6 className="font-weight-bolder ml-auto my-auto">
@@ -108,7 +108,7 @@ const Order = () => {
               )}
             </div>
             <div className="d-flex">
-              <div className="form-group w-25 mr-3">
+              <div className="form-group w-50 mr-3">
                 <input
                   type="text"
                   className="form-control form-control-lg"
@@ -123,9 +123,18 @@ const Order = () => {
               <div className="form-group w-25">
                 <input
                   type="text"
-                  className="form-control form-control-lg border-0 btn btn-success mt-1 d-none"
+                  className="form-control d-none"
                   name="image"
                   defaultValue={service.image}
+                  ref={register}
+                />
+              </div>
+              <div className="form-group w-25">
+                <input
+                  type="text"
+                  className="form-control d-none"
+                  name="status"
+                  defaultValue="Pending"
                   ref={register}
                 />
               </div>

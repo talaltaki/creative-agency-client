@@ -27,8 +27,11 @@ const ServiceCard = ({ service }) => {
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
         style={{ transform: props.xys.interpolate(trans) }}
       >
-        <div className="animated-card col-md-4 mx-auto">
-          <div className="card border-0 mt-5 ml-5" style={{ width: "18rem" }}>
+        <div className="animated-card col-md-4 col-sm-6 col-12 ml-3">
+          <div
+            className="card border-0 mt-5 mx-auto"
+            style={{ width: "18rem" }}
+          >
             <img
               src={service.image}
               class="card-img-top img-fluid w-25 mx-auto mt-4"

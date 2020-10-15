@@ -24,11 +24,11 @@ const Review = () => {
   };
 
   return (
-    <div className="container-fluid d-flex">
-      <div className="col-md-3">
+    <div className="row">
+      <div className="col-md-2 col-sm-4 col-4">
         <Sidebar />
       </div>
-      <div className="col-md-9 mt-5">
+      <div className="col-md-10 col-sm-8 col-8 mt-5">
         <div className="d-flex container-fluid">
           <h3 className="font-weight-bolder">Review</h3>
           <h6 className="font-weight-bolder ml-auto my-auto">
@@ -54,7 +54,7 @@ const Review = () => {
               <input
                 type="text"
                 className="form-control form-control-lg"
-                placeholder="Company's Name & Designation"
+                placeholder="Company's Name and Designation"
                 name="designation"
                 ref={register({ required: true })}
               />

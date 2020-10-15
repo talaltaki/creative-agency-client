@@ -17,6 +17,15 @@ const Feedback = () => {
       </h3>
 
       <div className="row">
+        {feedbacks.length === 0 && (
+          <div
+            className="spinner-border"
+            style={{ width: "3rem", height: "3rem" }}
+            role="status"
+          >
+            <span class="sr-only">Loading...</span>
+          </div>
+        )}
         {feedbacks.map((feedback) => (
           <FeedbackCard key={feedback._id} feedback={feedback} />
         ))}

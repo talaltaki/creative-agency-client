@@ -22,7 +22,7 @@ const Home = () => {
       <Feedback />
       <div style={{ backgroundColor: "#FBD062" }}>
         <Footer />
-        <footer className="text-center mt-5 pt-5">
+        <footer className="text-center mt-5 pt-5 pb-3">
           <small>copyright Orange Labs 2020</small>
         </footer>
       </div>

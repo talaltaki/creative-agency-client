@@ -13,10 +13,19 @@ const Services = () => {
   return (
     <section>
       <h3 className="mt-5 pt-5 text-center font-weight-bolder">
-        We Provide Awesome <span className="text-success">Services</span>
+        Provide awesome <span className="text-success">services</span>
       </h3>
 
-      <div className="row">
+      <div className="row container-fluid d-flex justify-content-center">
+        {services.length === 0 && (
+          <div
+            className="spinner-border"
+            style={{ width: "3rem", height: "3rem" }}
+            role="status"
+          >
+            <span class="sr-only">Loading...</span>
+          </div>
+        )}
         {services.map((service) => (
           <ServiceCard key={service._id} service={service} />
         ))}

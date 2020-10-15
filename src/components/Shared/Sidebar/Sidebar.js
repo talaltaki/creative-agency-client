@@ -44,21 +44,27 @@ const Sidebar = () => {
           {!isAdmin ? (
             <div>
               <li>
-                <Link to="/" className="text-dark text-decoration-none">
+                <Link
+                  to="/"
+                  className="btn btn-outline-success border-0 text-decoration-none"
+                >
                   <FontAwesomeIcon icon={faShoppingCart} /> <span>Order</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/service-list"
-                  className="text-dark text-decoration-none"
+                  className="btn btn-outline-success border-0 text-decoration-none"
                 >
                   <FontAwesomeIcon icon={faShoppingBag} />{" "}
                   <span>Service List</span>
                 </Link>
               </li>
               <li>
-                <Link to="/review" className="text-dark text-decoration-none">
+                <Link
+                  to="/review"
+                  className="btn btn-outline-success border-0 text-decoration-none"
+                >
                   <FontAwesomeIcon icon={faCommentDots} /> <span>Review</span>
                 </Link>
               </li>
@@ -68,7 +74,7 @@ const Sidebar = () => {
               <li>
                 <Link
                   to="/service-list"
-                  className="text-dark text-decoration-none"
+                  className="btn btn-outline-success border-0 text-decoration-none"
                 >
                   <FontAwesomeIcon icon={faShoppingBag} />{" "}
                   <span>Service List</span>
@@ -77,7 +83,7 @@ const Sidebar = () => {
               <li>
                 <Link
                   to="/add-service"
-                  className="text-dark text-decoration-none"
+                  className="btn btn-outline-success border-0 text-decoration-none"
                 >
                   <FontAwesomeIcon icon={faPlus} /> <span>Add Service</span>
                 </Link>
@@ -85,7 +91,7 @@ const Sidebar = () => {
               <li>
                 <Link
                   to="/make-admin"
-                  className="text-dark text-decoration-none"
+                  className="btn btn-outline-success border-0 btn-sm text-decoration-none"
                 >
                   <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
                 </Link>

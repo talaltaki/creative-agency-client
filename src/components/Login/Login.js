@@ -67,7 +67,7 @@ const Login = () => {
             onClick={handleGoogleSignIn}
             className="btn btn-default border rounded-pill mt-4 p-2 w-75"
           >
-            <span className="d-flex">
+            <span className="d-md-flex d-inline">
               <img
                 className="img-fluid"
                 style={{ width: "30px", height: "30px" }}

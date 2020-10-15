@@ -11,7 +11,7 @@ const Navbar = () => {
         />
       </a>
       <button
-        className="navbar-toggler"
+        className="navbar-toggler ml-auto"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNavAltMarkup"
