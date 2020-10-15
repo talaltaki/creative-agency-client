@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../App";
 import Sidebar from "../../Shared/Sidebar/Sidebar";
+import AdminServicesList from "../AdminServicesList/AdminServicesList";
 
 const AdminServices = () => {
   document.title = "Service List - Admin Panel";
@@ -30,20 +31,24 @@ const AdminServices = () => {
           <table className="table table-responsive table-borderless">
             <thead>
               <tr>
-                <th scope="col">Name</th>
+                <th style={{ width: "150px" }} scope="col">
+                  Name
+                </th>
                 <th scope="col">Email Id</th>
-                <th scope="col">Service</th>
-                <th scope="col">Project Details</th>
+                <th style={{ width: "200px" }} scope="col">
+                  Service
+                </th>
+                <th style={{ width: "400px" }} scope="col">
+                  Project Details
+                </th>
+                <th style={{ width: "150px" }} scope="col">
+                  Status
+                </th>
               </tr>
             </thead>
             <tbody>
               {services.map((service) => (
-                <tr>
-                  <td>{service.name}</td>
-                  <td>{service.email}</td>
-                  <td>{service.project}</td>
-                  <td>{service.details}</td>
-                </tr>
+                <AdminServicesList key={service._id} service={service} />
               ))}
             </tbody>
           </table>

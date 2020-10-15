@@ -15,6 +15,15 @@ const UserServiceCards = ({ placedOrder }) => {
         />
         <h5 class="card-title mt-3">{placedOrder.project}</h5>
         <p class="card-text">{placedOrder.details}</p>
+        {placedOrder.status === "Pending" && (
+          <button class="btn btn-danger">{placedOrder.status}</button>
+        )}
+        {placedOrder.status === "On going" && (
+          <button class="btn btn-warning">{placedOrder.status}</button>
+        )}
+        {placedOrder.status === "Done" && (
+          <button class="btn btn-success">{placedOrder.status}</button>
+        )}
       </div>
     </div>
   );

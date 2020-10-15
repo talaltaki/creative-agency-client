@@ -20,7 +20,7 @@ const Feedback = () => {
         {feedbacks.length === 0 && (
           <div
             className="spinner-border"
-            style={{ width: "3rem", height: "3rem" }}
+            style={{ width: "5rem", height: "5rem" }}
             role="status"
           >
             <span class="sr-only">Loading...</span>

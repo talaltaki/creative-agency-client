@@ -29,6 +29,15 @@ const UserServices = () => {
         </div>
 
         <div className="container-fluid row bg-light mt-3">
+          {placedOrders.length === 0 && (
+            <div
+              className="spinner-border"
+              style={{ width: "5rem", height: "5rem" }}
+              role="status"
+            >
+              <span class="sr-only">Loading...</span>
+            </div>
+          )}
           {placedOrders.map((placedOrder) => (
             <UserServiceCards key={placedOrder._id} placedOrder={placedOrder} />
           ))}
