@@ -8,7 +8,7 @@ const ServicesList = () => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/admin", {
+    fetch("https://guarded-sierra-46966.herokuapp.com/admin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: loggedInUser.email }),

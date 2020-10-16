@@ -10,7 +10,10 @@ const UserServices = () => {
   const [placedOrders, setPlacedOrders] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/orders?email=" + loggedInUser.email)
+    fetch(
+      "https://guarded-sierra-46966.herokuapp.com/orders?email=" +
+        loggedInUser.email
+    )
       .then((response) => response.json())
       .then((result) => setPlacedOrders(result));
   }, []);

@@ -10,7 +10,7 @@ const AddService = () => {
 
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/add-service", {
+    fetch("https://guarded-sierra-46966.herokuapp.com/add-service", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

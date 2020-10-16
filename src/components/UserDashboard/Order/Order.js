@@ -15,7 +15,7 @@ const Order = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://guarded-sierra-46966.herokuapp.com/services")
       .then((response) => response.json())
       .then((data) => {
         setServices(data);
@@ -26,7 +26,7 @@ const Order = () => {
 
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data, e) => {
-    fetch("http://localhost:5000/place-order", {
+    fetch("https://guarded-sierra-46966.herokuapp.com/place-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

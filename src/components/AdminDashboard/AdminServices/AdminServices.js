@@ -10,7 +10,7 @@ const AdminServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-orders")
+    fetch("https://guarded-sierra-46966.herokuapp.com/all-orders")
       .then((response) => response.json())
       .then((data) => setServices(data));
   }, []);

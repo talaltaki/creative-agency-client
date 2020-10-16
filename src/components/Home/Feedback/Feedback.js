@@ -5,7 +5,7 @@ const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/feedbacks")
+    fetch("https://guarded-sierra-46966.herokuapp.com/feedbacks")
       .then((response) => response.json())
       .then((data) => setFeedbacks(data));
   }, []);

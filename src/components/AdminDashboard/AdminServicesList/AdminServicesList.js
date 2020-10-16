@@ -2,7 +2,7 @@ import React from "react";
 
 const AdminServicesList = ({ service }) => {
   const changeStatus = (e) => {
-    fetch("http://localhost:5000/update-status", {
+    fetch("https://guarded-sierra-46966.herokuapp.com/update-status", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

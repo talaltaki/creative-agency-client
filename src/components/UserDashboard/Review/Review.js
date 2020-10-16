@@ -10,7 +10,7 @@ const Review = () => {
 
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/add-feedback", {
+    fetch("https://guarded-sierra-46966.herokuapp.com/add-feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
