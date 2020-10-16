@@ -12,16 +12,16 @@ const Navbar = () => {
       </a>
       <div id="navbarNavAltMarkup">
         <div className="navbar-nav flex-row ml-auto">
-          <a className="nav-link active mt-2 mr-4 mr-md-5 mr-sm-5" href="/">
+          <a className="nav-link active mt-2 mr-2 mr-md-3 mr-sm-3" href="/">
             Home <span className="sr-only">(current)</span>
           </a>
-          <a className="nav-link mt-2 mr-4 mr-md-5 mr-sm-3" href="/">
+          <a className="nav-link mt-2 mr-2 mr-md-3 mr-sm-3" href="/">
             Our Portfolio
           </a>
-          <a className="nav-link mt-2 mr-4 mr-md-5 mr-sm-3" href="/">
+          <a className="nav-link mt-2 mr-2 mr-md-3 mr-sm-3" href="/">
             Our Team
           </a>
-          <a className="nav-link mt-2 mr-4 mr-md-5 mr-sm-3" href="/">
+          <a className="nav-link mt-2 mr-2 mr-md-5 mr-sm-5" href="/">
             Contact Us
           </a>
           <a className="nav-link" href="/service-list">
