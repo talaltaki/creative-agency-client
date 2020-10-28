@@ -29,4 +29,4 @@ An Admin can -
 
 #### Contact me at [talaltaki.tt@gmail.com](talaltaki.tt@gmail.com)
 #### [Linkedin](https://www.linkedin.com/in/talal-taki/)
-#### [My Resume]()
+#### [My Resume](https://drive.google.com/file/d/15QwR-EVmMkIgcW-K-TknrPRCD70_icei/view?usp=sharing)
