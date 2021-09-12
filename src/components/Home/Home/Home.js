@@ -10,21 +10,18 @@ import Works from "../Works/Works";
 const Home = () => {
   return (
     <>
-      <div style={{ backgroundColor: "#FBD062" }}>
+      <div style={{ backgroundColor: "#52BE80" }}>
         <Navbar />
         <Header />
       </div>
       <Customers />
       <Services />
-      <div style={{ backgroundColor: "#111430" }}>
+      <div style={{ backgroundColor: "#52BE80" }}>
         <Works />
       </div>
       <Feedback />
-      <div style={{ backgroundColor: "#FBD062" }}>
+      <div style={{ backgroundColor: "#52BE80" }}>
         <Footer />
-        <footer className="text-center mt-5 pt-5 pb-3">
-          <small>copyright Orange Labs 2020</small>
-        </footer>
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import { UserContext } from "../../App";
-import { useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { firebaseConfig } from "./firebaseConfig";
 
 const Login = () => {
@@ -50,7 +50,7 @@ const Login = () => {
 
   return (
     <>
-      <a href="/">
+      <Link to="/">
         <img
           className="logo mx-auto d-block mt-5 img-fluid"
           style={{ height: "60px" }}
@@ -58,7 +58,7 @@ const Login = () => {
           href="/"
           alt="logo"
         />
-      </a>
+      </Link>
 
       <div className="card w-50 mx-auto d-block rounded mt-5 pt-5">
         <div className="card-body text-center">

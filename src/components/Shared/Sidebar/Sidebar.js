@@ -27,7 +27,7 @@ const Sidebar = () => {
 
   return (
     <div>
-      <a href="/">
+      <Link to="/">
         <img
           className="logo mx-auto d-block mt-5 img-fluid"
           style={{ height: "50px" }}
@@ -35,7 +35,7 @@ const Sidebar = () => {
           href="/"
           alt="logo"
         />
-      </a>
+      </Link>
       <div
         className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-5"
         style={{ height: "100vh" }}

@@ -19,7 +19,7 @@ const Works = () => {
   return (
     <section className="container">
       <h3 className="mt-5 pt-5 text-center text-light font-weight-bolder mb-5">
-        Here are some of <span className="text-success">our works</span>
+        Here are some of <span className="text-dark">our works</span>
       </h3>
 
       <Slider {...settings} className="mb-5 pb-5">

@@ -1,6 +1,5 @@
 import React, { createContext, useState } from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login";
@@ -19,35 +18,37 @@ function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
-        <Switch>
-          <Route path="/make-admin">
-            <MakeAdmin />
-          </Route>
+        <div className="font-poppins">
+          <Switch>
+            <PrivateRoute path="/make-admin">
+              <MakeAdmin />
+            </PrivateRoute>
 
-          <Route path="/add-service">
-            <AddService />
-          </Route>
+            <PrivateRoute path="/add-service">
+              <AddService />
+            </PrivateRoute>
 
-          <Route path="/review">
-            <Review />
-          </Route>
+            <PrivateRoute path="/review">
+              <Review />
+            </PrivateRoute>
 
-          <PrivateRoute path="/service-list">
-            <ServicesList />
-          </PrivateRoute>
+            <PrivateRoute path="/service-list">
+              <ServicesList />
+            </PrivateRoute>
 
-          <PrivateRoute path="/order/:id">
-            <Order />
-          </PrivateRoute>
+            <PrivateRoute path="/order/:id">
+              <Order />
+            </PrivateRoute>
 
-          <Route path="/login">
-            <Login />
-          </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
 
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
       </Router>
     </UserContext.Provider>
   );
