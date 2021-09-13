@@ -60,9 +60,6 @@ const Navbar = () => {
             <Link className="nav-link text-dark mr-3 mt-2" to="/">
               Home
             </Link>
-            <a className="nav-link text-dark mr-3 mt-2" href="#projects">
-              Projects
-            </a>
             <a className="nav-link text-dark mr-3 mt-2" href="#services">
               Services
             </a>

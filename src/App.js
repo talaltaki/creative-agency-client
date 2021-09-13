@@ -14,9 +14,28 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [user, setUser] = useState({
+    isSignedIn: false,
+    name: "",
+    photo: "",
+    email: "",
+    password: "",
+    error: "",
+    success: "",
+  });
+  const [newUser, setNewUser] = useState(true);
 
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <UserContext.Provider
+      value={[
+        loggedInUser,
+        setLoggedInUser,
+        user,
+        setUser,
+        newUser,
+        setNewUser,
+      ]}
+    >
       <Router>
         <div className="font-poppins">
           <Switch>
